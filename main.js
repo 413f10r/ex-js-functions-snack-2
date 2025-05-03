@@ -16,7 +16,7 @@ const sum2 = function (num1, num2) {
 
 const sum3 = (num1, num2) => (num1 + num2)
 
-console.log(sum3(1, 2));
+// console.log(sum3(1, 2));
 
 
 // 🏆 Snack 2
@@ -25,13 +25,13 @@ console.log(sum3(1, 2));
 // e restituisce il suo quadrato in una sola riga.
 
 
-function calcSquare ( n ) {
-return( n * n)
+function calcSquare(n) {
+    return (n * n)
 }
 
 const square = (n) => n * n;
 
-console.log(square (5))
+// console.log(square (5))
 
 
 
@@ -50,10 +50,15 @@ console.log(square (5))
 // console.log(eseguiOperazione(3, 4, somma)); // 7
 // console.log(eseguiOperazione(3, 4, moltiplica)); // 12
 
+function eseguiOperazione(n1, n2, op) {
+    return op(n1, n2)
+}
 
+const sum4 = (n1, n2) => (n1 + n2);
+const mult = (n1, n2) => (n1 * n2);
 
-
-
+console.log(eseguiOperazione(1, 2, sum4))
+console.log(eseguiOperazione(3, 3, mult))
 
 // 🏆 Snack 4
 // Crea un generatore di funzioni creaTimer

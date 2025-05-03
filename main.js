@@ -66,8 +66,16 @@ console.log(eseguiOperazione(3, 3, mult))
 // e restituisce una nuova funzione che avvia un setTimeout
 // per stampare "Tempo scaduto!".
 
+function creaTimer(time) {
+    return function () {
+        setTimeout(() => {
+            console.log("Time Over!");
+        }, time);
+    };
+}
 
-
+const wakeUp = creaTimer (1500)
+wakeUp()
 
 
 // 🏆 Snack 5

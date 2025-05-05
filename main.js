@@ -57,8 +57,8 @@ function eseguiOperazione(n1, n2, op) {
 const sum4 = (n1, n2) => (n1 + n2);
 const mult = (n1, n2) => (n1 * n2);
 
-console.log(eseguiOperazione(1, 2, sum4))
-console.log(eseguiOperazione(3, 3, mult))
+// console.log(eseguiOperazione(1, 2, sum4))
+// console.log(eseguiOperazione(3, 3, mult))
 
 // 🏆 Snack 4
 // Crea un generatore di funzioni creaTimer
@@ -74,8 +74,8 @@ function creaTimer(time) {
     };
 }
 
-const wakeUp = creaTimer (1500)
-wakeUp()
+// const wakeUp = creaTimer (1500)
+// wakeUp()
 
 
 // 🏆 Snack 5
@@ -122,13 +122,13 @@ function creaContatoreAutomatico(t){
      }
 }
 
-const startCount = creaContatoreAutomatico(1000)
-const timerId =startCount()
+// const startCount = creaContatoreAutomatico(1000)
+// const timerId =startCount()
 
-setTimeout(() =>{
-    clearInterval (timerId);
-    console.log("stop counter")
-}, 5000)
+// setTimeout(() =>{
+//     clearInterval (timerId);
+//     console.log("stop counter")
+// }, 5000)
 
 
 
@@ -139,9 +139,17 @@ setTimeout(() =>{
 //  Il messaggio deve essere stampato a intervalli regolari,
 //  ma si deve fermare dopo il tempo di stop.
 
+function startAndStop(start, end){
+    const go = setInterval (() => {
+        console.log("sto contando")
+    },start)
 
-
-
+setTimeout(()=>{
+    clearInterval(go)
+    console.log("stop!!!")
+},end)
+}
+startAndStop(1000,5000)
 
 //  🎯 Snack 8 (Bonus)
 // Crea una funzione che simula un conto alla rovescia

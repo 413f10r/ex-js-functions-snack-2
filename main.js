@@ -149,7 +149,7 @@ setTimeout(()=>{
     console.log("stop!!!")
 },end)
 }
-startAndStop(1000,5000)
+// startAndStop(1000,5000)
 
 //  🎯 Snack 8 (Bonus)
 // Crea una funzione che simula un conto alla rovescia
@@ -166,8 +166,22 @@ startAndStop(1000,5000)
 // 1
 // Tempo scaduto!
 
+function countdown (n){
+ let counter =n;
+ const intervalId =setInterval(()=>{
+if ( counter > 0 ){
+    console.log(counter--)
 
+}else {
+console.log("finish!!!")
+clearInterval(intervalId)
+}
 
+ },1000)
+
+}
+
+countdown(3)
 
 
 // 🎯 Snack 9 (Bonus)

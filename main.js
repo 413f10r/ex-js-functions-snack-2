@@ -85,8 +85,19 @@ wakeUp()
 
 // Nota: Questa funzione creerà un loop infinito.
 // Interrompilo manualmente o usa clearInterval() in un altro script.
+function stampaOgniSecondo(m) {
+    const interval = setInterval(() => {
+      console.log(m);
+    }, 1000);
+  
+    // Ferma il timer dopo 5 secondi
+    setTimeout(() => {
+      clearInterval(interval);
+      console.log("Timer fermato!");
+    }, 5000);
+  }
 
-
+//   stampaOgniSecondo("Sto contando...");
 
 
 
@@ -97,8 +108,27 @@ wakeUp()
 // restituisce una funzione che avvia un setInterval,
 // incrementando un contatore e stampandolo.
 
+function creaContatoreAutomatico(t){
+     // Inizializzo il contatore
+     return function (){
+         let counter =0;
+     // Incrementa e stampa il contatore
+         intervalId = setInterval ( ()  =>{
+             console.log ( counter++ )
+         }, t )
+         // Restituisce l'ID del timer per poterlo fermare 
+       return intervalId
 
+     }
+}
 
+const startCount = creaContatoreAutomatico(1000)
+const timerId =startCount()
+
+setTimeout(() =>{
+    clearInterval (timerId);
+    console.log("stop counter")
+}, 5000)
 
 
 
